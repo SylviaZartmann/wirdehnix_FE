@@ -1,0 +1,12 @@
+@import "../../variables.scss";
+
+div {
+  background-color: $secondary;
+  height: 77px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
