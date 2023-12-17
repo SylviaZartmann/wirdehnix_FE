@@ -1,10 +1,83 @@
 @import "../../variables.scss";
 
-div {
+.header-background {
   background-color: $secondary;
-  height: 77px;
+  height: 57px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  width: 100dvw;
+  box-shadow: 2px 2px 20px 20px $secondary;
 
+  .header-container {
+    width: $max-page;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .pagename {
+      display: flex;
+      color: $primary;
+      font-size: 40px;
+      font-weight: 800;
+
+      p:nth-child(1),
+      p:nth-child(7) {
+        line-height: 0px;
+      }
+
+      p:nth-child(2),
+      p:nth-child(6),
+      p:nth-child(8) {
+        line-height: 10px;
+      }
+
+      p:nth-child(3),
+      p:nth-child(5),
+      p:nth-child(9) {
+        line-height: 20px;
+      }
+
+      p:nth-child(4) {
+        line-height: 30px;
+      }
+
+      p {
+        margin: 0;
+        text-shadow: 2px 2px 1px $background;
+      }
+    }
+    .register-login {
+      color: $background;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      div {
+        gap: 10px;
+        a {
+          font-weight: 600;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        &:hover {
+          cursor: default;
+        }
+      }
+      .btn-1 {
+        background-color: $primary;
+        padding: 7px 30px 10px 30px;
+        border-radius: 13px;
+        font-weight: 600;
+        text-align: center;
+        box-shadow: 0 0 10px $primary;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $dark-primary;
+          box-shadow: 0px 0px 5px $background;
+        }
+      }
+    }
+  }
 }

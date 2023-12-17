@@ -1,0 +1,17 @@
+@import "../../variables.scss";
+
+.imprint-background {
+  display: flex;
+  justify-content: center;
+  margin-top: 77px;
+
+  .imprint-content {
+    width: $max-page;
+    .text-link-content {
+      color: $text;
+      a {
+        color: $text;
+      }
+    }
+  }
+}

@@ -1,12 +1,41 @@
 @import "../../variables.scss";
 
-div {
+.footer-background {
   background-color: $secondary;
-  height: 77px;
+  height: 57px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  width: 100dvw;
+  box-shadow: 2px 2px 20px 20px $secondary;
+  position: fixed;
   bottom: 0;
-  width: 100%;
+
+  .footer-content{
+    display: flex;
+    justify-content: space-between;
+    width: $max-page;
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+
+      .copyright {
+      font-weight: 600;
+      color: $background;
+    }
+
+    }
+  .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  }
 }

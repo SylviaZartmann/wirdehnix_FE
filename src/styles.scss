@@ -3,8 +3,17 @@
 body {
   background-color: $background;
   margin: 0;
+  overflow-x: hidden;
 }
 
 html {
   color: $text;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: default;
+}
+
+a:-webkit-any-link {
+  color: $background;
+  font-weight: 600;
+  text-decoration: none;
 }
