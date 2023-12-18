@@ -1,0 +1,19 @@
+@import "../../variables.scss";
+
+.start-background {
+  width: 100dvw;
+  height: 80dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .start-content {
+    display: flex;
+    flex-direction: column;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  }
+}
