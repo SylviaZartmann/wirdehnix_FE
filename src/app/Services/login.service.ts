@@ -19,4 +19,12 @@ export class LoginLogoutService {
   logout() {
     this.loggedIn.next(false);
   }
+
+  isAuthenticated(): boolean {
+    const token = localStorage.getItem('token');
+    if (token !== null) {
+      return true;
+    }
+    return false;
+  }
 }
