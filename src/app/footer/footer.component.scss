@@ -10,6 +10,7 @@
   box-shadow: 2px 2px 20px 20px $secondary;
   position: fixed;
   bottom: 0;
+  z-index: 2;
 
   .footer-content{
     display: flex;
@@ -18,11 +19,20 @@
 
     .footer-left {
       display: flex;
-      align-items: center;
+      align-items: baseline;
+      position: relative;
+
+      // img {
+      //   background-position: bottom -5px;
+      // }
 
       .copyright {
       font-weight: 600;
       color: $background;
+      position: absolute;
+      text-wrap: nowrap;
+      bottom: 0;
+      left: 102%;
     }
 
     }

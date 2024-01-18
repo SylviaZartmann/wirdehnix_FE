@@ -3,7 +3,10 @@
 body {
   background-color: $background;
   margin: 0;
-  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: auto;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -16,4 +19,8 @@ a:-webkit-any-link {
   color: $background;
   font-weight: 600;
   text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

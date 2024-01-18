@@ -17,7 +17,7 @@
       Neu hier?
       <a routerLink="/register" routerLinkActive="link-clicked" ariaCurrentWhenActive="page">Registrieren</a>
     </div>
-    <div class="btn-1" routerLink="/login" routerLinkActive="router-link-active" ariaCurrentWhenActive="page">Login</div>
+    <div (click)="isLoggedIn && isToken() ? logout() : null"  class="btn-1" routerLink="/login" routerLinkActive="router-link-active" ariaCurrentWhenActive="page">{{ isLoggedIn && isToken() ? 'Logout' : 'Login' }}</div>
   </div>
 </div>
 </div>

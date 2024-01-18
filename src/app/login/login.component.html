@@ -1,8 +1,15 @@
 <div class="login-background">
   <div class="login-content">
-    <input placeholder="e-Mail Adresse" type="email">
-    <input placeholder="Passwort" type="password">
-    <div class="btn-login">Login</div>
+    <form [formGroup]="FormData" (submit)="sendLogin($event)">
+      <input name="email" formControlName="email" placeholder="e-Mail Adresse" type="email">
+        <span *ngIf="submit && !validEmail">Ungültige Eingabe!</span>
+      <input formControlName="password" placeholder="Passwort" type="password">
+        <span *ngIf="submit && !validPassword">Ungültige Eingabe!</span>
+        <span *ngIf="errorFromBackend">E-Mail oder Password ungültig!</span>
+      <button class="btn-login">Login</button>
+      <span *ngIf="validEmail && validPassword && sendData">Erfolgreich gesendet!</span>
+    </form>
+
     <div class="register">
       <p>Noch keinen Account?!</p>
       <a routerLink="/register" routerLinkActive="link-clicked" ariaCurrentWhenActive="page">Registrieren</a>

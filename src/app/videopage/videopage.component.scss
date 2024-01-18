@@ -4,10 +4,58 @@
   display: flex;
   width: 100dvw;
   justify-content: center;
+  padding-bottom: 180px;
+
   .videopage-content {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
     width: $max-page;
     margin-top: 100px;
+  }
+}
+
+.category-background {
+  .category-name {
+    position: relative;
+    font-size: 24px;
+    font-weight: 600;
+    color: $text;
+    z-index: 1;
+  }
+
+  .category-content {
+    background-color: $dark-primary;
+    width: calc($max-page - 100px);
+    border-radius: 30px;
+    box-shadow: 0 0 20px 50px $dark-primary;
+    height: 200px;
+  }
+  .all-videos {
+    display: flex;
+    position: absolute;
+    top: 40px;
+    gap: 10px;
+    overflow: auto;
+
+    .video-content {
+      display: flex;
+      position: relative;
+      gap: 10px;
+    }
+    video {
+      height: auto;
+      width: 300px;
+      border-radius: 10px;
+    }
+  }
+  h4 {
+    margin: 5px 0 0 5px;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    transition: 0.5s;
+    z-index: 1;
   }
 }

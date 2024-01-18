@@ -11,7 +11,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
   {path: '', component: WelcomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'videopage', component: VideopageComponent},
+  {path: 'filmography', component: VideopageComponent},
   {path: 'privacy-policy', component: LegalNoticeComponent},
   {path: 'legal-notice', component: ImprintComponent},
 ];

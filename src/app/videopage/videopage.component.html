@@ -1,6 +1,60 @@
 <div class="videopage-background">
   <div class="videopage-content">
-    <app-category></app-category>
+
+
+    <div class="category-background" style="position: relative;">
+      <div class="category-name">{{categories[0]}}</div>
+      <div class="category-content">
+        <div class="all-videos">
+          @for (item of data; track data.id) {
+          <div>
+            <div *ngIf="item.category === categories[0]" class="video-content">
+              <video #videoElement poster="{{ item.thumbnail }}" controls src="{{ item.video_file }}"></video>
+            </div>
+            <h4 *ngIf="item.category === categories[0]" class="title">{{ item.title }}</h4>
+          </div>
+
+          } @empty {
+          <h3>No content yet</h3>
+          }
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="category-background" style="position: relative;">
+      <div class="category-name">{{categories[1]}}</div>
+      <div class="category-content"></div>
+
+      <div class="all-videos">
+        @for (item of data; track data.id) {
+        <div *ngIf="item.category === categories[1]" class="video-content">
+          <img src="{{ item.thumbnail }}" alt="">
+          <video src="{{ item.video_file }}"></video>
+        </div>
+        } @empty {
+        <h3>No content yet</h3>
+        }
+      </div>
+    </div>
+
+    <div class="category-background" style="position: relative;">
+      <div class="category-name">{{categories[2]}}</div>
+      <div class="category-content"></div>
+
+      <div class="all-videos">
+        @for (item of data; track data.id) {
+        <div *ngIf="item.category === categories[2]" class="video-content">
+
+          <img src="{{ item.thumbnail }}" alt="">
+          <video src="{{ item.video_file }}"></video>
+        </div>
+        } @empty {
+        <h3>No content yet</h3>
+        }
+      </div>
+
+    </div>
   </div>
 </div>
-

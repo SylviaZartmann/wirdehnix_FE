@@ -1,26 +1,20 @@
 <div class="register-background">
   <div class="register-content">
     <div class="register-input">
-      <div>
-        <input placeholder="Einen Vornamen" type="text">
-          <span>Ungültige Eingabe!</span>
-        <input placeholder="Einen Nachnamen" type="text">
-          <span>Ungültige Eingabe!</span>
-        <input placeholder="Geburtsdatum" type="date">
-          <span>Ungültige Eingabe!</span>
-      </div>
-      <div>
-        <input placeholder="e-Mail Adresse" type="email">
-          <span>Ungültige Eingabe! Muss "&#64;" enthalten</span>
-        <input placeholder="Passwort" type="password">
-          <span>Ungültige Eingabe! Muss mind. 8 Zeichen lang sein.</span>
-        <input placeholder="Passwort wiederholen" type="password">
-          <span>Ungültige Eingabe! Nicht identisch.</span>
-      </div>
+      <form [formGroup]="FormData" (submit)="sendRegister($event)">
+        <input formControlName="username" placeholder="Username" type="text">
+          <span *ngIf="submit && !validUsername">Muss mind. 3 Zeichen lang sein.</span>
+          <span *ngIf="!backendValidUsername">Username existiert bereits.</span>
+        <input formControlName="email" name="email" placeholder="e-Mail Adresse" type="email">
+          <span *ngIf="submit && !validEmail">Ungültige Eingabe! Muss "&#64;" enthalten</span>
+          <span *ngIf="!backendValidEmail">E-Mail Adresse bereits registriert.</span>
+        <input formControlName="password" placeholder="Passwort" type="password">
+          <span *ngIf="submit && !validPassword">Muss mind. 8 Zeichen lang sein.</span>
+        <input formControlName="conf_password" placeholder="Passwort wiederholen" type="password">
+          <span *ngIf="submit && !validPassword2">Ungültige Eingabe! Nicht identisch.</span>
+          <span *ngIf="sendData" class="successSpan">Registrierungslink an <br>e-Mail Adresse gesendet.</span>
+        <button class="btn-register">Registrieren</button>
+        </form>
     </div>
-
-
-    <div class="btn-register">Registrieren</div>
-
-  </div>
+   </div>
 </div>
