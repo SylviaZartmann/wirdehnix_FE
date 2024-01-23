@@ -122,7 +122,7 @@ export class RegisterComponent {
     password: string,
     conf_password: string
   ): Observable<any> {
-    const URL = 'http://127.0.0.1:8000/authentication/register/';
+    const URL = 'https://siehstehnix.sylviazartmann.de/authentication/register/';
     const data = {
       username: username,
       email: email,
@@ -136,16 +136,3 @@ export class RegisterComponent {
   }
 }
 
-// senden als JSON
-
-// sendRegisterToBackend(username:string, email: string, password: string, conf_password: string): Observable<any> {
-//   console.log(username, email, password, conf_password); // wir sind da
-//   const URL = 'http://127.0.0.1:8000/authentication/register/';
-// const body = new FormData();
-//   body.append('username', username);
-//   body.append('email', email);
-//   body.append('password', password);
-//   body.append('conf_password', conf_password);
-//   console.log('body', body);
-//   return this.http.post(URL, body);
-// }

@@ -20,7 +20,7 @@ export class RegisterCheckComponent implements OnInit {
     this.route.params.subscribe((params) => {
       const token = params['token'];
       if (token) {
-        const url = `http://127.0.0.1:8000/authentication/register/confirm/${token}/`;
+        const url = `https://siehstehnix.sylviazartmann.de/authentication/register/confirm/${token}/`;
         lastValueFrom(this.http.get(url));
         setTimeout(() => window.location.href = '/login', 3000);
       } else {
