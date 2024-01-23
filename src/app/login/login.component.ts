@@ -67,7 +67,7 @@ export class LoginComponent {
   }
 
   sendLoginToBackend(email: string, password: string): Observable<any> {
-    const URL = 'http://127.0.0.1:8000/authentication/login/';
+    const URL = 'https://siehstehnix.sylviazartmann.de/authentication/login/';
     const body = new FormData();
       body.append('email', email);
       body.append('password', password);
