@@ -43,7 +43,7 @@ export class VideopageComponent implements OnInit, AfterViewInit {
   }
 
   fetchData() {
-    const URL = 'http://127.0.0.1:8000/filmography/'; //'https://last-airbender-api.fly.dev/api/v1/characters'
+    const URL = 'https://siehstehnix.sylviazartmann.de/filmography/'; //'https://last-airbender-api.fly.dev/api/v1/characters'
     this.token = localStorage.getItem('token'); // localStorage in Service auslagern
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
