@@ -2,13 +2,13 @@
   <div class="change-content">
     <form [formGroup]="ChangeData" (submit)="changePW($event)">
       <input formControlName="email" name="email" placeholder="e-Mail Adresse" type="email">
-        <span *ngIf="submit && !validEmail">E-Mail Adresse existiert nicht!</span>
+        <span *ngIf="submit && !backendValidEmail">E-Mail Adresse existiert nicht!</span>
       <input formControlName="password" placeholder="Neues Passwort" type="password">
         <span *ngIf="submit && !validPW">Muss mind. 8 Zeichen lang sein.</span>
       <input formControlName="conf_password" placeholder="Neues Passwort wiederholen" type="password">
         <span *ngIf="submit && !validconfPW">Ungültige Eingabe! Nicht identisch.</span>
       <button >Passwort ändern</button>
-      <span *ngIf="sendData" class="successSpan">Bestätigungslink an e-Mail Adresse gesendet.</span>
+      <span *ngIf="sendData && backendValidEmail" class="successSpan">Bestätigungslink an e-Mail Adresse gesendet. <br> Du wirst zum Login weitergeleitet!</span>
     </form>
   </div>
 </div>

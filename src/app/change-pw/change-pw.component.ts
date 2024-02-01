@@ -55,7 +55,6 @@ export class ChangePWComponent {
       );
     setTimeout(() => {
       this.submit = false;
-      this.backendValidEmail = true;
     }, 5000);
 
     if (
@@ -64,7 +63,7 @@ export class ChangePWComponent {
       this.validconfPW &&
       this.validPW === this.validconfPW
     ) {
-      this.sendCahngesToBackend(
+      this.sendChangesToBackend(
         this.ChangeData.controls.email.value as string,
         this.ChangeData.controls.password.value as string,
         this.ChangeData.controls.conf_password.value as string
@@ -72,10 +71,12 @@ export class ChangePWComponent {
         .pipe(
           tap((response: any) => {
             // localStorage.setItem('token', response.token);
+            this.backendValidEmail = true;
             console.log(response);
             this.sendData=true;
             setTimeout(() => {
               this.router.navigate(['/login']);
+              this.backendValidEmail = false;
             }, 3000);
           }),
           catchError((error: any) => {
@@ -99,7 +100,7 @@ export class ChangePWComponent {
       else this.validconfPW = true;
   }
 
-  sendCahngesToBackend(email: string, password: string, conf_password: string): Observable<any> {
+  sendChangesToBackend(email: string, password: string, conf_password: string): Observable<any> {
     const URL = 'https://siehstehnix.sylviazartmann.de/authentication/changePW/';
     const data = {
       email: email,
