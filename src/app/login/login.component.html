@@ -6,6 +6,9 @@
       <input formControlName="password" placeholder="Passwort" type="password">
         <span *ngIf="submit && !validPassword">Ungültige Eingabe!</span>
         <span *ngIf="errorFromBackend">E-Mail oder Password ungültig!</span>
+        <div class="changePW">
+          <a routerLink="/changePW" routerLinkActive="link-clicked" ariaCurrentWhenActive="page">Passwort vergessen?</a>
+        </div>
       <button class="btn-login">Login</button>
       <span *ngIf="validEmail && validPassword && sendData">Erfolgreich eingeloggt!</span>
     </form>

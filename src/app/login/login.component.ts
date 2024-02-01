@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, NgModule } from '@angular/core';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, NgModule, PLATFORM_ID } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FormControl, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 
@@ -36,7 +36,12 @@ export class LoginComponent {
   sendData=false;
   errorFromBackend = false;
 
-  constructor(private LoginLogoutService: LoginLogoutService, private http:HttpClient, private fb: FormBuilder, private router: Router) {} //HTTP Client ist ein eingebauter Service in Angular
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private document: Document,
+    private fb: FormBuilder, private http: HttpClient,
+    private LoginLogoutService: LoginLogoutService,
+    private router: Router) {}
 
   sendLogin(event: Event) {
     event.preventDefault();
@@ -48,9 +53,13 @@ export class LoginComponent {
       this.FormData.controls.password.valid
     ) {
       this.sendLoginToBackend(this.FormData.controls.email.value as string, this.FormData.controls.password.value as string)
+
         .pipe(
           tap((response: any) => {
-            localStorage.setItem('token', response.token);
+            let localStorage = document.defaultView?.localStorage;
+            if (localStorage) {
+              localStorage.setItem('token', response.token);
+            }
             this.sendData=true;
             setTimeout(() => {
               this.LoginLogoutService.login();

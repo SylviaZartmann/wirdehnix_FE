@@ -8,11 +8,13 @@ import { ImprintComponent } from './imprint/imprint.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AuthGuardService } from './Guardes/auth-guard.service';
 import { RegisterCheckComponent } from './register-check/register-check.component';
+import { ChangePWComponent } from './change-pw/change-pw.component';
 
  export const routes: Routes = [
   {path: '', component: WelcomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'changePW', component: ChangePWComponent},
   {path: 'privacy-policy', component: LegalNoticeComponent},
   {path: 'legal-notice', component: ImprintComponent},
   {path: 'confirm-registration/:token', component: RegisterCheckComponent},

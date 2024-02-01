@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
-import { log } from 'console';
 
 @Component({
   selector: 'app-register-check',
@@ -14,6 +13,7 @@ import { log } from 'console';
   providers: [{ provide: HttpClient, useClass: HttpClient }],
 })
 export class RegisterCheckComponent implements OnInit {
+
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit() {
@@ -27,6 +27,5 @@ export class RegisterCheckComponent implements OnInit {
         console.error('Token not found in URL');
       }
     });
-
   }
 }

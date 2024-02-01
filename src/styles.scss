@@ -5,14 +5,20 @@ body {
   margin: 0;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  overflow: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth;
+
 }
 
 html {
   color: $text;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   cursor: default;
+
+}
+
+html::-webkit-scrollbar {
+  width: 0px;
 }
 
 a:-webkit-any-link {
@@ -21,6 +27,6 @@ a:-webkit-any-link {
   text-decoration: none;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
+
+
+

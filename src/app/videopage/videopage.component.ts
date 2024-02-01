@@ -52,7 +52,6 @@ export class VideopageComponent implements OnInit, AfterViewInit {
     this.httpClient
       .get<string>(URL, { headers }) //
       .subscribe((fetchedData: any) => {
-        console.log(fetchedData);
         this.data = fetchedData;
       });
   }

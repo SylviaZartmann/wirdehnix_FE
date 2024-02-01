@@ -6,6 +6,7 @@
   justify-content: center;
   padding-bottom: 180px;
 
+
   .videopage-content {
     display: flex;
     justify-content: center;
@@ -18,37 +19,46 @@
 }
 
 .category-background {
+  background-color: $dark-primary;
+  width: calc($max-page - 100px);
+  border-radius: 30px;
+  box-shadow: 0 0 10px 30px $dark-primary;
+  height: 300px;
+  overflow-x: scroll;
+  display: grid;
+
+
+
   .category-name {
-    position: relative;
+    margin-top: 10px;
     font-size: 24px;
     font-weight: 600;
     color: $text;
     z-index: 1;
   }
 
-  .category-content {
-    background-color: $dark-primary;
-    width: calc($max-page - 100px);
-    border-radius: 30px;
-    box-shadow: 0 0 20px 50px $dark-primary;
-    height: 200px;
-  }
   .all-videos {
     display: flex;
-    position: absolute;
-    top: 40px;
-    gap: 10px;
-    overflow: auto;
 
     .video-content {
       display: flex;
       position: relative;
-      gap: 10px;
+      height: 180px;
+      width: 300px;
+      padding: 0 5px;
     }
     video {
-      height: auto;
+      height: 180px;
       width: 300px;
       border-radius: 10px;
+      object-fit: cover;
+
+    video::poster {
+      height: 180px;
+      width: 300px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
     }
   }
   h4 {
@@ -58,4 +68,19 @@
     transition: 0.5s;
     z-index: 1;
   }
+}
+div::-webkit-scrollbar {
+  width: 10px;
+  background-color: $background;
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: $dark-primary;
+  border-radius: 10px;
+  border: 3px solid $background;
+}
+
+div::-webkit-scrollbar-track {
+  background-color: $background;
+  border-radius: 10px;
 }
