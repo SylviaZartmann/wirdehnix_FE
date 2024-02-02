@@ -28,7 +28,7 @@ import {
   imports: [CommonModule, RouterLink, HttpClientModule],
   providers: [{ provide: HttpClient, useClass: HttpClient }],
 })
-export class VideopageComponent implements OnInit, AfterViewInit {
+export class VideopageComponent implements OnInit {
   httpClient = inject(HttpClient);
   data: any = [];
 
@@ -57,26 +57,26 @@ export class VideopageComponent implements OnInit, AfterViewInit {
   }
 
 
-  // Video Pause
-  @ViewChildren('videoElement') videoElements!: QueryList<
-    ElementRef<HTMLVideoElement>
-  >;
+  // // Video Pause
+  // @ViewChildren('videoElement') videoElements!: QueryList<
+  //   ElementRef<HTMLVideoElement>
+  // >;
 
-  videos: HTMLVideoElement[] = [];
-  ngAfterViewInit(): void {
-    this.videos = this.videoElements.map(
-      (videoElement) => videoElement.nativeElement
-    );
-    this.videos.forEach((video) => {
-      video.addEventListener('play', () => this.pauseOtherVideos(video));
-    });
-  }
+  // videos: HTMLVideoElement[] = [];
+  // ngAfterViewInit(): void {
+  //   this.videos = this.videoElements.map(
+  //     (videoElement) => videoElement.nativeElement
+  //   );
+  //   this.videos.forEach((video) => {
+  //     video.addEventListener('play', () => this.pauseOtherVideos(video));
+  //   });
+  // }
 
-  pauseOtherVideos(targetVideo: HTMLVideoElement): void {
-    this.videos.forEach((video) => {
-      if (video !== targetVideo) {
-        video.pause();
-      }
-    });
-  }
+  // pauseOtherVideos(targetVideo: HTMLVideoElement): void {
+  //   this.videos.forEach((video) => {
+  //     if (video !== targetVideo) {
+  //       video.pause();
+  //     }
+  //   });
+  // }
 }

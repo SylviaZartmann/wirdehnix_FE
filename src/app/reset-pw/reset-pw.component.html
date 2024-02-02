@@ -1,0 +1,12 @@
+<div class="change-background">
+  <div class="change-content">
+    <form [formGroup]="ChangeData" (submit)="resetPW($event)">
+      <input formControlName="password" placeholder="Neues Passwort" type="password">
+        <span *ngIf="submit && !validPW">Muss mind. 8 Zeichen lang sein.</span>
+      <input formControlName="conf_password" placeholder="Neues Passwort wiederholen" type="password">
+        <span *ngIf="submit && !validconfPW">Ungültige Eingabe! Nicht identisch.</span>
+      <button >Passwort absenden</button>
+      <span *ngIf="sendData && backendValidEmail" class="successSpan">Bestätigungslink an e-Mail Adresse gesendet. <br> Du wirst zum Login weitergeleitet!</span>
+    </form>
+  </div>
+</div>
