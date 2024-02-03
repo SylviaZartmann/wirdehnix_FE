@@ -15,11 +15,11 @@ import { ResetPwComponent } from './reset-pw/reset-pw.component';
   {path: '', component: WelcomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'changePW', component: ChangePWComponent},
+  {path: 'changePW', component: ChangePWComponent}, // hier gebe ich mail  ein für link um  pw zu ändern
   {path: 'privacy-policy', component: LegalNoticeComponent},
   {path: 'legal-notice', component: ImprintComponent},
   {path: 'confirm-registration/:token', component: RegisterCheckComponent},
-  {path: 'reset-password', component: ResetPwComponent},
+  {path: 'reset-password', component: ResetPwComponent}, // hier gebe ich PAsswort neu ein
 
   {path: 'filmography', component: VideopageComponent, canActivate: [AuthGuardService]},
 ];

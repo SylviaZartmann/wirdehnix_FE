@@ -75,13 +75,13 @@ export class ChangePWComponent {
   }
 
   sendChangesToBackend(email: string): Observable<any> {
-    const URL = `https://siehstehnix.sylviazartmann.de/authentication/mailresetPW/`;
+    const URL = `https://34.32.41.71/authentication/mailresetPW/`; //https://siehstehnix.sylviazartmann.de - + variablen false/true anzeigen von  user existiert nichz anpassen
     const data = {
       email: email,
     };
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-    });
-    return this.http.post(URL, JSON.stringify(data), { headers: headers });
+    // const headers = new HttpHeaders({
+    //   'Content-Type': 'application/json',
+    // }); { headers: headers, params: data }
+    return this.http.post(URL, data);
   }
 }
