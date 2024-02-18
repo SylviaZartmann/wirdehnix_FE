@@ -48,11 +48,12 @@ export class ChangePWComponent {
     }, 5000);
 
     if (this.validEmail) {
+      this.backendValidEmail = true;
       this.sendChangesToBackend(this.ChangeData.controls.email.value as string)
         .pipe(
           tap((response: any) => {
             // localStorage.setItem('token', response.token);
-            this.backendValidEmail = true;
+
             this.sendData=true;
             setTimeout(() => {
               this.router.navigate(['/login']);
@@ -75,13 +76,13 @@ export class ChangePWComponent {
   }
 
   sendChangesToBackend(email: string): Observable<any> {
-    const URL = `https://34.32.41.71/authentication/mailresetPW/`; //https://siehstehnix.sylviazartmann.de - + variablen false/true anzeigen von  user existiert nichz anpassen
+    const URL = `https://siehstehnix.sylviazartmann.de/authentication/mailresetPW/`;
     const data = {
       email: email,
     };
     // const headers = new HttpHeaders({
     //   'Content-Type': 'application/json',
-    // }); { headers: headers, params: data }
-    return this.http.post(URL, data);
+    // });
+    return this.http.post(URL, data); // { headers: headers, params: data }
   }
 }

@@ -6,7 +6,7 @@
       <input formControlName="conf_password" placeholder="Neues Passwort wiederholen" type="password">
         <span *ngIf="submit && !validconfPW">Ungültige Eingabe! Nicht identisch.</span>
       <button >Passwort absenden</button>
-      <span *ngIf="sendData && backendValidEmail" class="successSpan">Bestätigungslink an e-Mail Adresse gesendet. <br> Du wirst zum Login weitergeleitet!</span>
+      <span *ngIf="sendData && backendValidPassword" class="successSpan">Passwort geändert.<br>Du wirst zum Login weitergeleitet!</span>
     </form>
   </div>
 </div>
