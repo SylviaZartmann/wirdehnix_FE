@@ -28,7 +28,6 @@ import { lastValueFrom } from 'rxjs';
 export class ResetPwComponent {
 
   ChangeData = this.fb.group({
-    email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(8),
@@ -41,7 +40,6 @@ export class ResetPwComponent {
 
   submit: boolean = false;
   sendData: boolean = false;
-  validEmail: boolean = false;
   validPW: boolean = false;
   validconfPW: boolean = false;
   backendValidPassword: boolean = false;

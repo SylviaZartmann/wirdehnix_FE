@@ -13,7 +13,7 @@
   </div>
 
   <div class="register-login">
-    <div>
+    <div *ngIf="!isLoggedIn">
       Neu hier?
       <a routerLink="/register" routerLinkActive="link-clicked" ariaCurrentWhenActive="page">Registrieren</a>
     </div>
